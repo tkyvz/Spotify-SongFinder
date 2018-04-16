@@ -23,13 +23,13 @@ mvn clean package
 After this command, a WAR file at *target/${project.name}-${project.version}.war* should have been created.
 
 4. Copy the created WAR file to the Tomcat for deployment.
-  1. Copy the file using 
+  * Copy the file using 
 ```
 cp target/${project.name}-${project.version}.war ${catalina.home}/webapps/${context.path}.war
 ``` 
 command. If this command is used, then the endpoint will be *http://localhost:8080/${context.path}/rest/songfinder*.
 
-  2. In order to deploy the application to the tomcat ROOT, create the file *${catalina.home}/conf/Catalina/localhost/ROOT.xml* with the given content
+  * In order to deploy the application to the tomcat ROOT, create the file *${catalina.home}/conf/Catalina/localhost/ROOT.xml* with the given content
 ```
 <Context docBase="path/to/deploy/application.war" />
 ```
@@ -38,12 +38,12 @@ There are two points to note here.
 *Second,* since we're defining our context in a different file than the *server.xml*, our *docBase* has to be outside of *${catalina.home}/webApps*.  
 
 5. Start the tomcat server using;
-  1. For Windows
+  * For Windows
 ```
 ${catalina.home}/bin/startup.bat
 ```
 
-  2. For Unix/Linux
+  * For Unix/Linux
 ```
 ${catalina.home}/bin/startup.sh
 ```
